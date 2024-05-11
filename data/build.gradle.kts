@@ -1,20 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.ms.golabob"
+    namespace = "com.ms.data"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ms.golabob"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -38,14 +35,11 @@ android {
 dependencies {
 
     implementation(project(":domain"))
-    implementation(project(":data"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.testext)
     androidTestImplementation(libs.espresso)
-
 }
