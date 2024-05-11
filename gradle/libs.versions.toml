@@ -2,6 +2,8 @@
 androidGradlePlugin = "8.1.2"
 kotlin = "1.9.0"
 
+hilt = "2.51.1"
+
 
 
 core = "1.9.0"
@@ -21,9 +23,14 @@ junit = {module ="junit:junit",version.ref = "junit"}
 testext = {module = "androidx.test.ext:junit",version.ref = "testext"}
 espresso = {module = "androidx.test.espresso:espresso-core",version.ref = "espresso"}
 
+hilt-plugin = {module = "com.google.dagger:hilt-android-gradle-plugin",version.ref = "hilt"}
+hilt-android ={module="com.google.dagger:hilt-android",version.ref = "hilt"}
+hilt-compiler = {module ="com.google.dagger:hilt-android-compiler",version.ref = "hilt"}
+
+
 
 [bundles]
-#hilt = ["hilt-android"]
+hilt = ["hilt-android"]
 
 
 [plugins]
@@ -31,4 +38,4 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref ="androidGradlePlugin"}
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
-#hilt-android = { id="dagger.hilt.android.plugin", version.ref = "hilt"}
+hilt-android = { id="dagger.hilt.android.plugin", version.ref = "hilt"}
