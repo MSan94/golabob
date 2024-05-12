@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -60,4 +63,8 @@ dependencies {
     implementation(libs.okhttp3)
     implementation(libs.okhttp3.interceptor)
     implementation(libs.gson)
+
+    //viewmodel
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
 }
