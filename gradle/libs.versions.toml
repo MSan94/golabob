@@ -3,7 +3,7 @@ androidGradlePlugin = "8.1.2"
 kotlin = "1.9.0"
 
 hilt = "2.51.1"
-
+retrofit = "2.11.0"
 
 
 core = "1.9.0"
@@ -13,6 +13,7 @@ constraintlayout = "2.1.4"
 junit = "4.13.2"
 testext = "1.1.5"
 espresso = "3.5.1"
+okhttp = "4.12.0"
 
 [libraries]
 core-ktx = {module = "androidx.core:core-ktx",version.ref = "core"}
@@ -24,10 +25,12 @@ testext = {module = "androidx.test.ext:junit",version.ref = "testext"}
 espresso = {module = "androidx.test.espresso:espresso-core",version.ref = "espresso"}
 
 hilt-plugin = {module = "com.google.dagger:hilt-android-gradle-plugin",version.ref = "hilt"}
-hilt-android ={module="com.google.dagger:hilt-android",version.ref = "hilt"}
-hilt-compiler = {module ="com.google.dagger:hilt-android-compiler",version.ref = "hilt"}
-
-
+hilt-android ={module= "com.google.dagger:hilt-android",version.ref = "hilt"}
+hilt-compiler = {module = "com.google.dagger:hilt-android-compiler",version.ref = "hilt"}
+retrofit = {module = "com.squareup.retrofit2:retrofit",version.ref = "retrofit"}
+gson = {module = "com.squareup.retrofit2:converter-gson",version.ref = "retrofit"}
+okhttp3 = {module = "com.squareup.okhttp3:okhttp",version.ref = "okhttp"}
+okhttp3-interceptor = {module = "com.squareup.okhttp3:logging-interceptor",version.ref = "okhttp"}
 
 [bundles]
 hilt = ["hilt-android"]

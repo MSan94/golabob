@@ -54,4 +54,10 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.plugin)
     kapt(libs.hilt.compiler)
+
+    // retrofit2 & okhttp3
+    implementation(libs.retrofit)
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3.interceptor)
+    implementation(libs.gson)
 }
