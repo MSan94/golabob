@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -42,4 +44,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.testext)
     androidTestImplementation(libs.espresso)
+
+    // hilt
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.plugin)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3.interceptor)
+    implementation(libs.gson)
+
+
 }
