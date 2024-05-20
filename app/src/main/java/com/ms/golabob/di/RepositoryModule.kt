@@ -2,6 +2,7 @@ package com.ms.golabob.di
 
 import com.ms.data.datasource.FoodDataSourceImpl
 import com.ms.data.repository.FoodRepositoryImpl
+import com.ms.domain.repository.FoodRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,5 +17,5 @@ class RepositoryModule {
     @Singleton
     fun provideFoodRepository(
         foodDataSourceImpl: FoodDataSourceImpl
-    ) = FoodRepositoryImpl(foodDataSourceImpl)
+    ) : FoodRepository = FoodRepositoryImpl(foodDataSourceImpl)
 }

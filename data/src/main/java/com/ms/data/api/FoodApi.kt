@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface FoodApi {
 
-    @GET("")
+    @GET("api/bd5c92db27e54283b27c/COOKRCP01/json/1/5")
     suspend fun getFoods() : FoodResponse?
 
 }

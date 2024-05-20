@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -20,8 +23,14 @@ android {
     }
 
     buildTypes {
+        val localProperties = Properties()
+        localProperties.load(rootProject.file("local.properties").inputStream())
+        debug {
+            buildConfigField("String","FOOD_API_KEY", "\"${localProperties["FOOD_API_KEY"].toString()}\"")
+        }
         release {
             isMinifyEnabled = false
+            buildConfigField("String","FOOD_API_KEY", "\"${localProperties["FOOD_API_KEY"].toString()}\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -37,6 +46,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        buildConfig = true
     }
 }
 

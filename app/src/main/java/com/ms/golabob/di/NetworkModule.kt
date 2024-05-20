@@ -1,5 +1,6 @@
 package com.ms.golabob.di
 
+import com.ms.data.api.FoodApi
 import com.ms.golabob.utils.UrlUtils.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -9,6 +10,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -35,6 +37,18 @@ class NetworkModule {
         .client(provideHttpClient())
         .addConverterFactory(gsonConverterFactory)
         .build()
+
+    @Provides
+    @Singleton
+    fun provideConverterFactory() : GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFoodApiService(retrofit : Retrofit) : FoodApi {
+        return retrofit.create(FoodApi::class.java)
+    }
 
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply {
